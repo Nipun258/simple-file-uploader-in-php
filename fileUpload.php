@@ -1,5 +1,8 @@
-<?php
-    //Craete by E1641113
+<?php   //Craete by E1641113
+    if (empty($_FILES['myfile']['name'])) {
+    echo "<h1 style='text-align:center; color:red'>No file was selected for upload, Please select your file!!</h1>";
+    header('Refresh: 5; URL=Q3.php');
+   }else{  
     $currentDir = getcwd();
     $uploadDirectory = "/uploads/";
 
@@ -35,7 +38,7 @@
                     header('Refresh: 10; URL=Q3.php');
                 //Name, type and size of the file should be displayed for a successful upload
             } else {
-                echo "An error occurred somewhere. Try again or contact the admin";
+                echo "<h1 style='text-align:center; color:blue'>An error occurred somewhere. Try again or contact the admin</h1>";
                 header('Refresh: 5; URL=Q3.php');
             }
         } else {
@@ -45,6 +48,6 @@
             }
         }
     }
-
+ }
 
 ?>
